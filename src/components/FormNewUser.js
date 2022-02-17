@@ -1,28 +1,29 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import api from '../services/api';
-import DataContext from '../context/DataContext';
 import { useNavigate } from 'react-router-dom';
 
-function FormLogin() {
+function FormNewUser() {
 
+  const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
-  const { setUserLogin } = useContext(DataContext);
+  
   const navigate = useNavigate();
 
 
-  const login = async (event) => {
+  const newUser = async (event) => {
     event.preventDefault();
 
-    const dataUser = {
+    const dataNewUser = {
+      name,
       email,
       password,
     };
 
     try {
-      const response = await api.post('/login', dataUser); 
-      setUserLogin(response.data);
-      navigate('/tasks');
+      await api.post('/user', dataNewUser);
+      alert('Usuário Cadastrado com Sucesso!') 
+      navigate('/');
     } catch (err) {
       alert(err.message);
     }
@@ -30,8 +31,15 @@ function FormLogin() {
 
   return (
     <div>
-      <h1>Login</h1>
-      <form onSubmit={login}>
+      <h1>Cadastro Novo Usuário</h1>
+      <form onSubmit={newUser}>
+        <input
+          type="text"
+          placeholder="Insira seu nome"
+          name="name"
+          data-testid="name-input"
+          onChange={ event => setName(event.target.value)}
+        />
         <input
           type="email"
           placeholder="Insira seu email"
@@ -48,13 +56,13 @@ function FormLogin() {
         />
         <button
           type="submit"
-          data-testid="user-login"
+          data-testid="user-add"
         >
-          entrar
+          Cadastrar
         </button>
       </form>
     </div>
   )
 }
 
-export default FormLogin;
+export default FormNewUser;
