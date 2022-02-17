@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import DataProvider from './context/DataProvider';
 import reportWebVitals from './reportWebVitals';
+import DataProvider from './context/DataProvider';
 
 ReactDOM.render(
   <BrowserRouter>

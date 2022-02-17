@@ -1,15 +1,15 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
-import Tasks from './pages/Tasks';
+/* import Tasks from './pages/Tasks'; */
 
 function App() {
   return (
     <div>
-      <Routes>
+      <Switch>
+        {/* <Route exact path="/tasks" component={ Tasks } /> */}
         <Route path="/" component={ Login } />
-        <Route exact path="/tasks" component={ Tasks } />  
-      </Routes>
+      </Switch>
     </div>
   );
 }
