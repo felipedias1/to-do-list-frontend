@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import NewTask from '../components/NewTask';
 import TaskList from '../components/TaskList';
 
-function Login() {
+function Tasks() {
   return (
     <div>
       <Header />
@@ -13,4 +13,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Tasks;

@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route exact path="/tasks" component={<Tasks />} />
+        <Route exact path="/tasks" element={<Tasks />} />
         <Route path="/" element={<Login />} />
       </Routes>
     </div>
