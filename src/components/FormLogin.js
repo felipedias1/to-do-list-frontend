@@ -22,6 +22,7 @@ function FormLogin() {
     try {
       const response = await api.post('/login', dataUser); 
       setUserLogin(response.data);
+      console.log(response.data)
       navigate('/tasks');
     } catch (err) {
       alert(err.message);
