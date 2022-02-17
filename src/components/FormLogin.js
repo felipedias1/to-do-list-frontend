@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FormLogin () {
+function FormLogin() {
   return (
     <div>
       <h1>Login</h1>
@@ -17,7 +17,6 @@ function FormLogin () {
         data-testid="password-input"
       />
       <button
-        onClick={ this.clickButton }
         type="button"
         data-testid="product-add-to-cart"
       >
