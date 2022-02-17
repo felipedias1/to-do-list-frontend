@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import DataContext from './DataContext';
 
 function DataProvider({ children }) {
-  const contextValue = { };
+  const [ userLogin, setUserLogin ] = useState({});
+
+  const contextValue = { 
+    userLogin, setUserLogin,
+  };
   
   return (
     <div>
